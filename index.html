@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nikhil Raj Deep</title>
+<meta name="description" content="Nikhil Raj Deep — Applied Scientist, Developer and Remote Sensing practitioner. Root-zone soil moisture, L-band microwave radiometry and physics-constrained machine learning.">
+<meta name="theme-color" content="#070c12">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap">
+<!-- @build:maplibre-css -->
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.css">
+<!-- @end -->
+<!-- @build:site-css -->
+<link rel="stylesheet" href="css/style.css">
+<!-- @end -->
+</head>
+<body>
+<a class="skip" href="#about">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="nav__bar">
+    <a class="brand" href="#home" aria-label="Nikhil Raj Deep — home">Nikhil <span>Raj</span> Deep</a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publication">Publication</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#blogs">Blogs</a></li>
+        <li><a href="#youtube">Youtube</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#cv">CV</a></li>
+      </ul>
+    </nav>
+    <div class="nav__tools">
+      <button class="iconbtn" id="themeBtn" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="iconbtn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="menu" id="menu">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publication">Publication</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#blogs">Blogs</a></li>
+      <li><a href="#youtube">Youtube</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#cv">CV</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+<!-- ═════════ HOME — interactive globe ═════════ -->
+<section class="hero" id="home" aria-label="Interactive globe">
+  <div class="map" id="map" role="application" aria-label="Interactive 3D globe. Drag to rotate, scroll or pinch to zoom."></div>
+
+  <div class="hero__copy">
+    <div class="eyebrow">Earth observation · Soil physics · Gainesville, FL</div>
+    <h1>Nikhil Raj Deep</h1>
+    <p class="hero__roles"><b>Applied Scientist</b>, <b>Developer</b> and <b>Remote Sensing</b> practitioner</p>
+    <p class="hero__line">Measuring root-zone soil moisture from space and from the air — L-band microwave radiometry, physics-constrained machine learning, and the maps built on top of them.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#research">See my research</a>
+      <a class="btn btn--ghost" href="#about">About me</a>
+    </div>
+  </div>
+
+  <a class="maptiler-logo" id="maptilerLogo" href="https://www.maptiler.com" target="_blank" rel="noopener" hidden aria-label="MapTiler"><img src="https://api.maptiler.com/resources/logo.svg" alt="MapTiler" height="22"></a>
+  <div class="scroll-hint" aria-hidden="true">Scroll ↓</div>
+</section>
+
+<!-- ═════════ ABOUT ═════════ -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="kicker">01 · About</div>
+    <h2>Soil water, seen from above.</h2>
+    <div class="about">
+      <div>
+        <div class="portrait" id="portrait">
+          <svg viewBox="0 0 200 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-opacity=".18" style="color:var(--teal)">
+              <circle cx="100" cy="125" r="46"/><circle cx="100" cy="125" r="78"/><circle cx="100" cy="125" r="112"/>
+              <path d="M0 125h200M100 0v250M30 40l140 170M170 40L30 210"/>
+            </g>
+          </svg>
+          <span>NRD</span>
+          <img id="portraitImg" src="assets/photo.jpg" alt="Portrait of Nikhil Raj Deep" hidden>
+        </div>
+        <dl class="facts">
+          <div><dt>Now</dt><dd>PhD candidate, Soil, Water &amp; Ecosystem Sciences, University of Florida</dd></div>
+          <div><dt>Also</dt><dd>Research Scientist, NRSC · ISRO (India)</dd></div>
+          <div><dt>Based</dt><dd>Gainesville, Florida, USA</dd></div>
+          <div><dt>Tools</dt><dd>R · Python · Google Earth Engine</dd></div>
+        </dl>
+      </div>
+      <div>
+        <p class="lead">I am an applied scientist, developer and remote sensing practitioner with more than five years of experience turning satellite, airborne and field observations into soil and crop information people can act on.</p>
+        <p>My PhD at the University of Florida focuses on <strong>field-scale root-zone soil moisture (RZSM)</strong> — estimated from L-band passive microwave radiometry, the τ–ω radiative-transfer model and physics-constrained machine learning — and on forecasting <strong>plant-available water</strong> across Florida's sandy soils and cropping systems.</p>
+        <p>Before Florida I worked as a Research Scientist at the National Remote Sensing Centre (NRSC), ISRO, where I led national-scale land-use / land-cover mapping from AWiFS and LISS-III, and built crop-mapping tools on Sentinel-1/2 and Google Earth Engine. I also worked with imaging spectroscopy (PRISMA, AVIRIS-NG) for soil organic carbon, and with hyperspectral data for mangrove chlorophyll.</p>
+        <h3 style="font-size:1.1rem;margin:1.6rem 0 .7rem">Interests</h3>
+        <ul class="chips">
+          <li>Passive &amp; active microwave</li><li>L-band radiometry</li><li>Root-zone soil moisture</li><li>Soil hydraulic properties</li>
+          <li>Pedotransfer functions</li><li>Imaging spectroscopy</li><li>Land cover mapping</li><li>Crop mapping</li><li>Physics-informed ML</li><li>UAV remote sensing</li>
+        </ul>
+        <h3 style="font-size:1.1rem;margin:1.6rem 0 .7rem">Beyond the lab</h3>
+        <p>Vice President of the SWES graduate student association; research coordinator in the Data Science Institute group at UF. Member of ASPRS, SSSA and AI² (AI Square) Center club, among others — and currently working with my advisor, <strong>Dr. Ebrahim Babaeian</strong>, to start a Remote Sensing &amp; AI student club in SWES.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ EXPERIENCE ═════════ -->
+<section class="section" id="experience">
+  <div class="wrap">
+    <div class="kicker">02 · Experience</div>
+    <h2>Where I have worked</h2>
+    <ol class="timeline">
+      <li>
+        <div class="when"><span class="todo-badge">ADD DATES</span>Present</div>
+        <h3>PhD Candidate &amp; Graduate Researcher</h3>
+        <div class="org">University of Florida · Soil, Water, and Ecosystem Sciences</div>
+        <ul>
+          <li>Field-scale root-zone soil moisture from UAV and satellite L-band radiometry (τ–ω, effective emission depth, Tikhonov-regularised retrieval).</li>
+          <li>NISAR soil-moisture validation over Florida potato and sweet-corn fields.</li>
+          <li>Physics-informed neural pedotransfer functions for van Genuchten water-retention and hydraulic-conductivity curves.</li>
+          <li>Research coordinator, Data Science Institute group · Vice President, SWES graduate student association.</li>
+        </ul>
+      </li>
+      <li>
+        <div class="when"><span class="todo-badge">ADD DATES</span>India</div>
+        <h3>Research Scientist</h3>
+        <div class="org">National Remote Sensing Centre (NRSC), ISRO</div>
+        <ul>
+          <li>Led a team on national-scale land-use / land-cover mapping using AWiFS and LISS-III.</li>
+          <li>Developed <strong>cropMapper</strong>, an R package for seasonal crop-area mapping with Sentinel-1/2 on Google Earth Engine.</li>
+          <li>Predicted soil organic carbon from imaging spectroscopy (PRISMA, AVIRIS-NG).</li>
+        </ul>
+      </li>
+      <li>
+        <div class="when"><span class="todo-badge">ADD DATES</span>India</div>
+        <h3>Junior Research Fellow</h3>
+        <div class="org">IIT Kharagpur</div>
+        <ul><li>Hyperspectral analysis of mangroves and chlorophyll estimation.</li></ul>
+      </li>
+      <li>
+        <div class="when"><span class="todo-badge">ADD DATES</span>India</div>
+        <h3>Junior Research Fellow</h3>
+        <div class="org">DRDO · Defence Terrain Research Laboratory (DGRE)</div>
+        <ul><li>Soil spectral libraries and terrain characterisation.</li></ul>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═════════ RESEARCH ═════════ -->
+<section class="section" id="research">
+  <div class="wrap">
+    <div class="kicker">03 · Research</div>
+    <h2>What I am working on</h2>
+    <div class="grid cols-3">
+      <article class="card">
+        <span class="tag">Microwave</span>
+        <h3>Root-zone soil moisture from L-band radiometry</h3>
+        <p>A calibrated τ–ω framework and an equilibrium-depth-scaling method that link surface brightness temperature to moisture deeper in the root zone, tested with a UAV L-band radiometer over potato fields at Citra, Florida.</p>
+      </article>
+      <article class="card">
+        <span class="tag">SAR</span>
+        <h3>NISAR soil-moisture validation</h3>
+        <p>Evaluating NISAR L-band GCOV and the L3 soil-moisture products against about 80 in-field probe locations at four depths, using a water-cloud and integral-equation modelling approach.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Soil physics</span>
+        <h3>Physics-informed pedotransfer functions</h3>
+        <p>Neural networks that predict van Genuchten water-retention parameters and hydraulic conductivity from soil properties, with physical constraints and ensemble uncertainty — benchmarked against Rosetta on independent datasets.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Water &amp; crops</span>
+        <h3>Plant-available water forecasting</h3>
+        <p>Forecasting plant-available water for Florida's sandy soils and cropping systems, connecting satellite observables to the agronomic water that crops can actually use.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Optical</span>
+        <h3>Land cover &amp; crop mapping</h3>
+        <p>National LULC from AWiFS / LISS-III and seasonal crop-area mapping with Sentinel-1/2 on Google Earth Engine — the kind of mapping that turns satellite imagery like the globe above into classified maps.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Spectroscopy</span>
+        <h3>Imaging spectroscopy of soil and mangroves</h3>
+        <p>Soil organic carbon from PRISMA and AVIRIS-NG imagery, soil spectral libraries, and hyperspectral chlorophyll estimation in mangroves.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ PUBLICATION ═════════ -->
+<section class="section" id="publication">
+  <div class="wrap">
+    <div class="kicker">04 · Publication</div>
+    <h2>Papers &amp; manuscripts</h2>
+    <h3 style="font-size:1.1rem;margin-bottom:.8rem">Published</h3>
+    <ul class="pubs">
+      <li class="pub todo">
+        <span class="pub__title"><span class="todo-badge">ADD</span>Your published article from the PhD — title</span>
+        <span class="pub__meta">Authors · Journal · Year · DOI link</span>
+      </li>
+    </ul>
+    <h3 style="font-size:1.1rem;margin:2rem 0 .8rem">In preparation</h3>
+    <ul class="pubs">
+      <li class="pub">
+        <span class="pub__title">Root-zone soil moisture from UAV L-band radiometry: τ–ω calibration and effective emission depth over Florida potato fields</span>
+        <span class="pub__meta">Manuscript in preparation</span>
+      </li>
+      <li class="pub">
+        <span class="pub__title">A physics-informed inverse neural pedotransfer function for van Genuchten soil-water retention and conductivity</span>
+        <span class="pub__meta">Manuscript in preparation</span>
+      </li>
+    </ul>
+    <div class="btnrow">
+      <a class="btn btn--line" href="#" id="scholarLink">Google Scholar <span class="todo-badge" style="margin:0">ADD LINK</span></a>
+      <a class="btn btn--line" href="#" id="orcidLink">ORCID <span class="todo-badge" style="margin:0">ADD LINK</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ NEWS ═════════ -->
+<section class="section" id="news">
+  <div class="wrap">
+    <div class="kicker">05 · News</div>
+    <h2>Recent updates</h2>
+    <ul class="news">
+      <li><time>Fall 2026</time><span>Returning as Teaching Assistant for <em>Introduction to Soils in the Environment Lab</em> (SWS3022L) at the University of Florida.</span></li>
+      <li><time>2026</time><span>Working with Dr. Ebrahim Babaeian to start a Remote Sensing &amp; AI student club in the SWES department.</span></li>
+      <li><time>2026</time><span>Serving as Vice President of the SWES graduate student association.</span></li>
+      <li class="todo" style="padding-inline:.8rem"><time><span class="todo-badge">ADD</span>Date</time><span>Add your next news item — a paper, talk, award or field campaign.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═════════ TEACHING ═════════ -->
+<section class="section" id="teaching">
+  <div class="wrap">
+    <div class="kicker">06 · Teaching</div>
+    <h2>Teaching &amp; mentoring</h2>
+    <div class="grid cols-2">
+      <article class="card">
+        <span class="tag tag--accent">Teaching assistant</span>
+        <h3>Introduction to Soils in the Environment Lab · SWS3022L</h3>
+        <p class="muted mono" style="font-size:.8125rem">University of Florida · Fall 2025, Fall 2026</p>
+        <p>Laboratory instruction in soil properties and soil–environment interactions for undergraduates.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Community</span>
+        <h3>Remote Sensing &amp; AI student club</h3>
+        <p>Helping launch a student club in SWES that brings remote sensing and AI methods to soil, water and ecosystem students.</p>
+      </article>
+      <article class="card todo">
+        <span class="tag tag--accent">ADD</span>
+        <h3>Workshops, guest lectures, tutorials</h3>
+        <p>List any GIS / remote-sensing trainings you have taught, with links to materials.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ BLOGS ═════════ -->
+<section class="section" id="blogs">
+  <div class="wrap">
+    <div class="kicker">07 · Blogs</div>
+    <h2>Notes &amp; write-ups</h2>
+    <p class="muted" style="max-width:40rem">Short articles on remote sensing, soil physics and the open-source tools behind them.</p>
+    <div class="grid cols-3" style="margin-top:1.4rem">
+      <article class="card todo"><span class="tag tag--accent">ADD POST</span><h3>Post title</h3><p>One-line summary and a link to the article.</p></article>
+      <article class="card todo"><span class="tag tag--accent">ADD POST</span><h3>Post title</h3><p>One-line summary and a link to the article.</p></article>
+      <article class="card todo"><span class="tag tag--accent">ADD POST</span><h3>Post title</h3><p>One-line summary and a link to the article.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ YOUTUBE ═════════ -->
+<section class="section" id="youtube">
+  <div class="wrap">
+    <div class="kicker">08 · Youtube</div>
+    <h2>Videos &amp; tutorials</h2>
+    <p class="muted" style="max-width:40rem">Screen-recorded tutorials and talks on GIS, Google Earth Engine, R and Python for remote sensing.</p>
+    <div class="grid cols-3" style="margin-top:1.4rem">
+      <article class="card todo"><span class="tag tag--accent">ADD VIDEO</span><h3>Video title</h3><p>Paste a YouTube link and thumbnail.</p></article>
+      <article class="card todo"><span class="tag tag--accent">ADD VIDEO</span><h3>Video title</h3><p>Paste a YouTube link and thumbnail.</p></article>
+      <article class="card todo"><span class="tag tag--accent">ADD VIDEO</span><h3>Video title</h3><p>Paste a YouTube link and thumbnail.</p></article>
+    </div>
+    <div class="btnrow"><a class="btn btn--solid" href="#" id="ytLink">Visit the channel <span class="todo-badge" style="margin:0;color:inherit">ADD LINK</span></a></div>
+  </div>
+</section>
+
+<!-- ═════════ CONTACT ═════════ -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="kicker">09 · Contact</div>
+    <h2>Let's talk</h2>
+    <div class="grid cols-2">
+      <div>
+        <p class="lead">Interested in collaborating on soil moisture, microwave remote sensing or applied geospatial tools? I'd be glad to hear from you.</p>
+      </div>
+      <ul class="contact-list">
+        <li><span>Email</span><span class="todo" style="padding:.1rem .4rem"><span class="todo-badge">ADD</span>your-email@example.com</span></li>
+        <li><span>Location</span><span>Gainesville, Florida, USA</span></li>
+        <li><span>LinkedIn</span><span class="todo" style="padding:.1rem .4rem"><span class="todo-badge">ADD</span>profile link</span></li>
+        <li><span>GitHub</span><span class="todo" style="padding:.1rem .4rem"><span class="todo-badge">ADD</span>github.com/your-handle</span></li>
+        <li><span>Affiliation</span><span>Soil, Water, and Ecosystem Sciences · University of Florida</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ CV ═════════ -->
+<section class="section" id="cv">
+  <div class="wrap">
+    <div class="kicker">10 · CV</div>
+    <h2>Curriculum vitae</h2>
+    <div class="grid cols-2">
+      <div class="card">
+        <span class="tag">Education</span>
+        <ul style="margin:.2rem 0 0;padding-left:1.1rem">
+          <li><strong>PhD</strong>, Soil, Water, and Ecosystem Sciences — University of Florida <span class="muted">(in progress)</span></li>
+          <li><strong>M.Tech</strong>, Remote Sensing — Birla Institute of Technology, Mesra <span class="muted">(with distinction)</span></li>
+          <li><strong>B.Tech</strong>, Civil Engineering — Birla Institute of Technology, Mesra</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag">Honours</span>
+        <ul style="margin:.2rem 0 0;padding-left:1.1rem">
+          <li>All India Rank 281, GATE Geomatics Engineering</li>
+          <li>Research fellowships from DST and SERB (India)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btnrow">
+      <a class="btn btn--solid" href="assets/Nikhil_Raj_Deep_CV.pdf" id="cvLink" target="_blank" rel="noopener">View / download CV (PDF)</a>
+      <span class="muted" style="align-self:center;font-size:.875rem"><span class="todo-badge">ADD FILE</span>Place the PDF at <code>assets/Nikhil_Raj_Deep_CV.pdf</code></span>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>© <span id="year">2026</span> Nikhil Raj Deep. Globe imagery: MapTiler satellite (or Esri World Imagery) with Esri place names and borders.</p>
+    <p>Globe built with MapLibre GL JS.</p>
+  </div>
+</footer>
+
+<!-- @build:preview-flags -->
+<!-- @end -->
+<!-- @build:scripts -->
+<script src="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.js"></script>
+<script src="js/config.js"></script>
+<script src="js/layers.js"></script>
+<script src="js/main.js"></script>
+<!-- @end -->
+</body>
+</html>
