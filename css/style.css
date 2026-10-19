@@ -357,7 +357,7 @@ input[type="range"] { width: 100%; accent-color: var(--hero-accent); height: 1.6
 .panel .field { display: grid; gap: .1rem; flex: 1; min-width: 0; }
 
 /* Homepage: a single-line name and a separate globe stage on the right. */
-.hero .map { left: auto; right: -2%; top: 12%; bottom: 8%; width: 53%; }
+.hero .map { left: auto; right: 0; top: 12%; bottom: 8%; width: 51%; }
 .hero__copy { top: 50%; bottom: auto; transform: translateY(-50%); max-width: none; width: 54%; right: auto; }
 .hero__name { position: relative; width: fit-content; padding: 2.8rem .8rem .6rem; margin-left: -.8rem; }
 .hero__name::after { content: ""; position: absolute; inset: 2.4rem 0 0; pointer-events: none; border: 1px solid #f4d35e35; clip-path: polygon(0 0, 2% 0, 2% 2%, 98% 2%, 98% 0, 100% 0, 100% 100%, 98% 100%, 98% 98%, 2% 98%, 2% 100%, 0 100%); }
