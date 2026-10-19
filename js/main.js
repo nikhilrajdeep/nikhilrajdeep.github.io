@@ -87,15 +87,15 @@
   const isDesktop = () => window.innerWidth >= 700;
   function padding() {
     const w = window.innerWidth;
-    if (isWide()) return { top: 0, bottom: 0, left: Math.round(w * 0.13), right: 0 };
-    if (isDesktop()) return { top: 0, bottom: Math.round(window.innerHeight * 0.2), left: 0, right: 0 };
-    return { top: Math.round(window.innerHeight * 0.16), bottom: Math.round(window.innerHeight * 0.06), left: 0, right: 0 };
+    // The globe has its own right-hand stage; reserve space above it on phones.
+    if (isDesktop()) return { top: 0, bottom: 0, left: 0, right: 0 };
+    return { top: 0, bottom: 0, left: 0, right: 0 };
   }
   function fitZoom() {
-    const w = hero.clientWidth, h = hero.clientHeight, p = padding();
+    const w = $('map').clientWidth, h = $('map').clientHeight, p = padding();
     const usableW = w - p.left - p.right, usableH = h - p.top - p.bottom;
     const diameter = Math.min(usableW, usableH) * (isWide() ? 0.84 : 0.9);
-    return Math.max(0.6, Math.log2(diameter / 163));
+    return Math.max(0.1, Math.log2(diameter / 163));
   }
 
   let imageryUrl = CFG.basemap.imagery, imageryMax = CFG.basemap.imageryMaxzoom, imageryAttr = CFG.basemap.attribution;
@@ -122,7 +122,7 @@
     },
     center: [HOME.lng, HOME.lat],
     zoom: fitZoom(),
-    minZoom: 0.4,
+    minZoom: 0.1,
     maxZoom: 17,
     maxPitch: 65,
     attributionControl: false,
@@ -154,7 +154,7 @@
     if (rotateOn && heroVisible && !document.hidden && !pointerDown && t - lastInteract > 3000 &&
         map.getZoom() < 4.5 && !map.isMoving()) {
       const c = map.getCenter();
-      map.jumpTo({ center: [c.lng + dt * 0.006, c.lat] });   // about 6 degrees per second
+      map.jumpTo({ center: [c.lng + dt * 0.008, c.lat] });   // gentle rotation: 8 degrees per second
     }
     requestAnimationFrame(tick);
   }
