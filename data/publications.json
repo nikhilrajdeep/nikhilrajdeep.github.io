@@ -94,7 +94,11 @@
       "url": "https://acsess.onlinelibrary.wiley.com/doi/abs/10.1002/vzj2.70060",
       "doi": "10.1002/vzj2.70060",
       "source": "Google Scholar",
-      "impact": null,
+      "impact": {
+        "value": 3.5,
+        "checked": "2026-10-19",
+        "url": "https://acsess.onlinelibrary.wiley.com/journal/15391663"
+      },
       "openAccess": true
     },
     {
@@ -316,7 +320,11 @@
       "url": "https://www.sciencedirect.com/science/article/pii/S0378377426001526",
       "doi": "10.1016/j.agwat.2026.110271",
       "source": "Google Scholar",
-      "impact": null
+      "impact": {
+        "value": 6.5,
+        "checked": "2026-10-19",
+        "url": "https://www.sciencedirect.com/journal/agricultural-water-management/vol/216"
+      }
     },
     {
       "id": "scholar-W7OEmFMy1HYC",

@@ -518,16 +518,16 @@ input[type="range"] { width: 100%; accent-color: var(--hero-accent); height: 1.6
 .publication-controls input { width: 12rem; }
 .publication-source-note, .publication-footnote { font-size: .72rem; color: var(--muted); line-height: 1.7; margin: 1rem 0 0; }
 .publication-source-note a { color: inherit; }
-.publication-group { margin-top: 3.2rem; scroll-margin-top: calc(var(--nav-h) + 1.5rem); }
+.publication-group { margin-top: 2.4rem; scroll-margin-top: calc(var(--nav-h) + 1.5rem); }
 .publication-group-heading { display: flex; align-items: end; justify-content: space-between; gap: 1rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--line); }
-.publication-group-heading h3 { font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 500; letter-spacing: -.015em; }
+.publication-group-heading h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); font-weight: 700; letter-spacing: -.015em; }
 .publication-group-heading .about-label { margin-bottom: .4rem; }
 .publication-group-count { font: 400 .75rem var(--mono); color: var(--muted); }
 .publication-records { list-style: none; padding: 0; margin: 0; }
-.publication-record { padding: 1.6rem 0; border-bottom: 1px solid var(--line); }
-.publication-authors { font-size: .84rem; color: var(--muted); line-height: 1.85; }
+.publication-record { padding: 1.2rem 0; border-bottom: 1px solid var(--line); }
+.publication-authors { font-size: .84rem; color: var(--muted); line-height: 1.65; }
 .publication-self { font-weight: 600; color: #275a91; background: #e5edf6; padding: .15rem .3rem; border-radius: .2rem; white-space: nowrap; }
-.publication-record h4 { font: 500 clamp(1.03rem, 1.6vw, 1.28rem)/1.55 var(--sans); margin: .7rem 0 .8rem; letter-spacing: -.012em; color: var(--fg); }
+.publication-record h4 { font: 500 clamp(1.03rem, 1.6vw, 1.28rem)/1.45 var(--sans); margin: .5rem 0 .6rem; letter-spacing: -.012em; color: var(--fg); }
 .publication-record h4 a { color: inherit; text-decoration: none; }
 .publication-record h4 a:hover { color: var(--teal); text-decoration: underline; }
 .publication-badges { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
