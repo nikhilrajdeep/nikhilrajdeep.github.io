@@ -18,7 +18,7 @@
       group.hidden=visible===0;
       matches+=visible;
     });
-    status.textContent=matches?`${matches} publications shown`:'No publications match your search.';
+    status.textContent=matches?`${matches} publication${matches===1?'':'s'} shown`:'No publications match your search.';
     status.classList.toggle('sr-only',matches>0);
   }
   search.addEventListener('input',update);sort.addEventListener('change',update);update();

@@ -20,3 +20,7 @@ The repository workflow `.github/workflows/publications.yml` runs automatically 
 ## Validation
 
 Run the generator and `node --check js/publications.js`, then `git diff --check`. In the browser verify total counts, highlighted names, no zero-citation badges, no unavailable-resource placeholders, both sort modes, search, and a narrow-screen layout. Do not publish the uploaded CV, contact details or referees as part of this refresh.
+
+## Initial GitHub execution
+
+The initial run passed all four parser tests, but Google Scholar returned HTTP 403 to the GitHub runner. Direct access is therefore not currently a working unattended data source. The workflow supports SerpApi as an optional provider using its documented Scholar Author raw HTML output. Add a repository Actions secret named SERPAPI_KEY with a valid key from your own SerpApi account, then run Monthly publication refresh manually once to verify provider access. Do not paste keys into source files. Provider access has not been tested without a supplied key. The schedule remains enabled and preserves the last successful snapshot on failure. No account or subscription was created.

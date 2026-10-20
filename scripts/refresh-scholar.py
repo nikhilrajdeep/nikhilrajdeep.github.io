@@ -2,6 +2,7 @@
 import copy
 import datetime
 import json
+import os
 import pathlib
 import re
 import time
@@ -16,8 +17,21 @@ PROFILE = 'https://scholar.google.com/citations?user=Tq4KyvUAAAAJ&hl=en&pagesize
 
 
 def fetch(url):
-    response = requests.get(url, timeout=40, headers={'User-Agent': 'Mozilla/5.0'})
-    response.raise_for_status()
+    key = os.environ.get('SERPAPI_KEY')
+    if key:
+        query = parse_qs(urlparse(url).query)
+        params = dict(engine='google_scholar_author', author_id='Tq4KyvUAAAAJ',
+                      hl='en', num=100, output='html', api_key=key)
+        if query.get('citation_for_view'):
+            params.update(view_op='view_citation', citation_id=query['citation_for_view'][0])
+        try:
+            response = requests.get('https://serpapi.com/search', params=params, timeout=90)
+        except requests.RequestException:
+            raise RuntimeError('Scholar data service request failed') from None
+    else:
+        response = requests.get(url, timeout=40, headers={'User-Agent': 'Mozilla/5.0'})
+    if not response.ok:
+        raise RuntimeError(f'Scholar source returned HTTP {response.status_code}; retaining previous snapshot')
     soup = BeautifulSoup(response.text, 'html.parser')
     if soup.select_one('#captcha-form') or 'unusual traffic' in soup.get_text().lower():
         raise RuntimeError('Scholar blocked this request; retaining the previous snapshot')
