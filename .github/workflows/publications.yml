@@ -1,6 +1,12 @@
 name: Monthly publication refresh
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publications.yml'
+      - 'scripts/refresh-scholar.py'
+      - 'scripts/test_refresh_scholar.py'
   schedule:
     - cron: '23 10 1 * *'
   workflow_dispatch:
