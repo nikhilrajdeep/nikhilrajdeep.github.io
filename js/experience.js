@@ -48,7 +48,7 @@
       style: {
         version: 8,
         sources: {
-          base: { type: 'raster', tiles: ['https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'], tileSize: 256, attribution: '© OpenStreetMap contributors © CARTO', maxzoom: 19 },
+          base: { type: 'raster', tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}'], tileSize: 256, attribution: 'Map tiles © Esri and its data contributors', maxzoom: 19 },
           'career-points': { type: 'geojson', data: { type: 'FeatureCollection', features } },
           'career-selected': { type: 'geojson', data: { type: 'FeatureCollection', features: [] } }
         },
