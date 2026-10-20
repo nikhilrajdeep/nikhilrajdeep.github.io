@@ -48,12 +48,14 @@
       style: {
         version: 8,
         sources: {
-          base: { type: 'raster', tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}'], tileSize: 256, attribution: 'Map tiles © Esri and its data contributors', maxzoom: 19 },
+          base: { type: 'raster', tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'], tileSize: 256, attribution: 'Imagery © Esri, Vantor, Earthstar Geographics and the GIS User Community', maxzoom: 18 },
+          labels: { type: 'raster', tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}'], tileSize: 256, attribution: 'Labels and boundaries © Esri', maxzoom: 13 },
           'career-points': { type: 'geojson', data: { type: 'FeatureCollection', features } },
           'career-selected': { type: 'geojson', data: { type: 'FeatureCollection', features: [] } }
         },
         layers: [
           { id: 'career-base', type: 'raster', source: 'base' },
+          { id: 'career-labels', type: 'raster', source: 'labels' },
           { id: 'career-rings', type: 'circle', source: 'career-points', paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 0, 14, 5, 26, 9, 70], 'circle-color': ['get', 'color'], 'circle-opacity': .13, 'circle-stroke-color': ['get', 'color'], 'circle-stroke-width': 1, 'circle-stroke-opacity': .4 } },
           { id: 'career-selected-ring', type: 'circle', source: 'career-selected', paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 0, 19, 9, 90], 'circle-color': ['get', 'color'], 'circle-opacity': .08, 'circle-stroke-color': ['get', 'color'], 'circle-stroke-width': 1.5, 'circle-stroke-opacity': .55 } },
           { id: 'career-dots', type: 'circle', source: 'career-points', paint: { 'circle-radius': 5, 'circle-color': ['get', 'color'], 'circle-stroke-color': '#fff', 'circle-stroke-width': 2 } }
