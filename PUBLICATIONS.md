@@ -15,7 +15,7 @@ The static publication section is generated from `data/publications.json`. Edit 
 
 ## Monthly refresh
 
-A Codex monthly heartbeat named **Refresh portfolio publications** is scheduled for the first day of each month. It checks Scholar and publisher records, updates this dataset, regenerates the static HTML, pushes publication-only changes, and verifies GitHub Pages. Preserve the last good snapshot if a source is blocked. Do not create a second competing scheduler.
+The repository workflow `.github/workflows/publications.yml` runs automatically on the first of each month at 10:23 UTC, or manually from GitHub Actions. No ChatGPT session, paid API, or personal token is required. It fetches the public Scholar profile, updates verified profile and existing paper citation counts, and imports new records only when Scholar supplies complete authors, a date and an explicit journal or conference venue. Ambiguous records and possible duplicate versions are saved in the workflow review artifact. CV-only entries and manually verified publisher metadata are preserved. Impact factors, corresponding authorship, code/data links, and manuscript status remain curated because Scholar cannot reliably supply them. A blocked or incomplete response fails the run without overwriting the previous snapshot. Successful changes are committed to main and explicitly dispatch the existing Pages deployment workflow, since pushes using GITHUB_TOKEN do not trigger other workflows. The previous ChatGPT heartbeat is paused. GitHub may delay scheduled runs or disable schedules after 60 days without repository activity; re-enable the workflow in Actions if necessary.
 
 ## Validation
 
