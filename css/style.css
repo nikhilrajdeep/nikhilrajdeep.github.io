@@ -363,7 +363,7 @@ input[type="range"] { width: 100%; accent-color: var(--hero-accent); height: 1.6
 .hero__name::before { content: ""; position: absolute; inset: 2.4rem 0 0; background: linear-gradient(110deg, #ffd65a10, #ffd65a24); border: 1px dashed #ffd65a99; opacity: var(--acquisition, 0); box-shadow: inset 0 0 30px #ffd65a10, 0 0 25px #ffd65a0a; pointer-events: none; }
 .hero__name::after { content: ""; position: absolute; inset: 2.4rem 0 0; pointer-events: none; opacity: calc(.12 + var(--acquisition, 0) * .88); background: linear-gradient(#ffda67, #ffda67) left top / 16px 2px no-repeat, linear-gradient(#ffda67, #ffda67) left top / 2px 16px no-repeat, linear-gradient(#ffda67, #ffda67) right top / 16px 2px no-repeat, linear-gradient(#ffda67, #ffda67) right top / 2px 16px no-repeat, linear-gradient(#ffda67, #ffda67) left bottom / 16px 2px no-repeat, linear-gradient(#ffda67, #ffda67) left bottom / 2px 16px no-repeat, linear-gradient(#ffda67, #ffda67) right bottom / 16px 2px no-repeat, linear-gradient(#ffda67, #ffda67) right bottom / 2px 16px no-repeat; }
 .hero h1 { position: relative; font-size: clamp(2.8rem, 5.7vw, 6.5rem); line-height: 1.08; letter-spacing: -.035em; font-weight: 500; white-space: nowrap; text-wrap: nowrap; }
-.hero__roles { max-width: none; margin-top: 1.1rem; font: 600 2.65cqw/1.55 var(--sans); letter-spacing: .035em; text-transform: uppercase; white-space: nowrap; color: #ffdf6b; text-shadow: 0 0 16px #ffdc6630; }
+.hero__roles { max-width: none; margin-top: 1.1rem; font: 600 2.2cqw/1.55 var(--sans); letter-spacing: .035em; text-transform: uppercase; white-space: nowrap; color: #ffdf6b; text-shadow: 0 0 16px #ffdc6630; }
 .hero__line { display: block; max-width: 34rem; margin-top: 1.25rem; font-size: clamp(1rem, 1.35vw, 1.2rem); line-height: 1.7; color: #c6d0d6; }
 .hero__cta { display: flex; }
 .name-satellite { position: absolute; inset: -80px 0 0; width: 100%; height: calc(100% + 80px); overflow: visible; pointer-events: none; }
@@ -379,7 +379,7 @@ input[type="range"] { width: 100%; accent-color: var(--hero-accent); height: 1.6
   .hero { min-height: 50rem; }
   .hero__copy { top: calc(var(--nav-h) + 2rem); left: var(--gutter); right: var(--gutter); width: auto; transform: none; }
   .hero h1 { font-size: clamp(2rem, 9vw, 3.8rem); }
-  .hero__roles { font-size: 2.65cqw; max-width: none; }
+  .hero__roles { font-size: 2.2cqw; max-width: none; }
   .hero__line { font-size: 1rem; max-width: 32rem; }
   .hero .map { width: 90%; height: 42%; top: auto; bottom: 0; right: -8%; }
   .hero__cta { margin-top: 1rem; }
