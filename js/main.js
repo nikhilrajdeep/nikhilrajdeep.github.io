@@ -73,6 +73,88 @@
     if (img.complete && img.naturalWidth) img.hidden = false;
   }
 
+  /* One orbital clock drives the satellite, acquisition rays, and frame light.
+     All beams target the measured name corners, including after font loading. */
+  function initNameOrbit() {
+    const frame = document.querySelector('.hero__name');
+    const svg = frame.querySelector('.name-satellite');
+    const glyph = svg.querySelector('.satellite-glyph').cloneNode(true);
+    svg.replaceChildren();
+    const ns = 'http://www.w3.org/2000/svg';
+    const make = (tag, attrs, parent = svg) => {
+      const el = document.createElementNS(ns, tag);
+      Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+      parent.appendChild(el);
+      return el;
+    };
+    const defs = make('defs', {});
+    glyph.id = 'name-orbit-glyph';
+    defs.appendChild(glyph);
+    const gradient = make('linearGradient', { id: 'orbit-light', x1: '0', y1: '0', x2: '0', y2: '1' }, defs);
+    make('stop', { offset: '0', 'stop-color': '#ffd666', 'stop-opacity': '.015' }, gradient);
+    make('stop', { offset: '1', 'stop-color': '#ffd666', 'stop-opacity': '.16' }, gradient);
+    const track = make('path', { class: 'orbit-track' });
+    const trail = make('g', { class: 'orbit-history' });
+    const stations = [.24, .43, .62].map((phase) => {
+      const group = make('g', { opacity: '0' }, trail);
+      const rays = make('path', { class: 'orbit-rays orbit-rays--past' }, group);
+      const sat = make('use', { href: '#name-orbit-glyph' }, group);
+      return { phase, group, rays, sat };
+    });
+    const beam = make('path', { fill: 'url(#orbit-light)' });
+    const rays = make('path', { class: 'orbit-rays' });
+    const sat = make('use', { href: '#name-orbit-glyph' });
+    let width = 1, height = 1, corners = [];
+    function measure() {
+      width = frame.clientWidth;
+      height = frame.clientHeight + 80;
+      const top = 80 + parseFloat(getComputedStyle(frame, '::before').top);
+      svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+      corners = [[1, top], [width - 1, top], [width - 1, height - 1], [1, height - 1]];
+      track.setAttribute('d', `M-60 55 Q${width / 2} -7 ${width + 60} 55`);
+    }
+    new ResizeObserver(measure).observe(frame);
+    document.fonts.ready.then(measure);
+    measure();
+    const smooth = (v) => { v = Math.max(0, Math.min(1, v)); return v * v * (3 - 2 * v); };
+    const position = (p) => ({ x: -60 + (width + 120) * p, y: 24 + 31 * Math.pow(p * 2 - 1, 2) });
+    const geometry = (p) => {
+      const { x, y } = position(p);
+      const origin = `${x.toFixed(2)} ${(y + 10).toFixed(2)}`;
+      return {
+        transform: `translate(${x} ${y}) rotate(${(p - .5) * 12}) scale(.62)`,
+        rays: corners.map(([cx, cy]) => `M${origin} L${cx} ${cy}`).join(' '),
+        beam: `M${origin} L${corners.map(c => c.join(' ')).join(' L')} Z`
+      };
+    };
+    let elapsed = 0, previous = 0;
+    function render(t) {
+      if (previous && heroVisible && !document.hidden) elapsed += Math.min(t - previous, 80);
+      previous = t;
+      // A 12-second pass followed by a 4-second quiet interval.
+      const p = reducedMotion ? .12 : Math.min(1, (elapsed % 16000) / 12000);
+      const acquisition = reducedMotion ? 0 : smooth((p - .18) / .1) * (1 - smooth((p - .72) / .12));
+      const fade = smooth(p / .08) * (1 - smooth((p - .92) / .08));
+      const g = geometry(p);
+      sat.setAttribute('transform', g.transform);
+      sat.setAttribute('opacity', fade * .9);
+      beam.setAttribute('d', g.beam);
+      beam.setAttribute('opacity', acquisition);
+      rays.setAttribute('d', g.rays);
+      rays.setAttribute('opacity', acquisition * .72);
+      frame.style.setProperty('--acquisition', acquisition.toFixed(3));
+      stations.forEach((station, i) => {
+        const past = geometry(station.phase);
+        station.sat.setAttribute('transform', past.transform);
+        station.rays.setAttribute('d', past.rays);
+        station.group.setAttribute('opacity', smooth((p - station.phase) / .035) * (1 - smooth((p - .86) / .14)) * (.18 + i * .07));
+      });
+      if (!reducedMotion) requestAnimationFrame(render);
+    }
+    requestAnimationFrame(render);
+  }
+  initNameOrbit();
+
   /* ───────────── Globe ───────────── */
   function hasWebGL() {
     try {
