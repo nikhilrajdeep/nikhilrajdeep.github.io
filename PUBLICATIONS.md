@@ -1,0 +1,22 @@
+# Publication maintenance
+
+The static publication section is generated from `data/publications.json`. Edit the data and run `node scripts/build-publications.cjs`. The renderer validates author identity, group membership, unique IDs, HTTPS links and sourced journal metrics. `js/publications.js` provides search and within-group date/citation sorting. HTML works without JavaScript.
+
+## Source rules
+
+- Citation source is the public Google Scholar profile `https://scholar.google.com/citations?user=Tq4KyvUAAAAJ&hl=en`. The initial verified snapshot is dated 2026-10-19 and reports 38 citations, h-index 3, i10-index 2. Access worked in the browser although the web fetch tool returned rate limiting.
+- `scholarTotalCitations` is the profile total, not the sum of displayed journal-paper counts. Scholar includes preprints and other records. Citation badges appear only when a verified value exceeds zero. Null means unknown. Never replace inaccessible counts with zero. Advance `updated` only after successfully verifying the Scholar snapshot.
+- Published article count excludes pipeline items, conferences and duplicate preprints. The river-management arXiv and EarthArXiv versions correspond to the published PLOS Water paper and are not separate published articles. The arXiv record has 1 citation; the published version has none at the initial check. Do not combine version counts without evidence.
+- Authors are complete Scholar/publisher author lists when available. CV-only contributions preserve the CV list, including initials where no full name is established. Display normalizes Nikhil's known author-name variants to Nikhil Raj Deep. First-author/coauthor labels derive from author order. Set `corresponding: true` only with direct publisher evidence.
+- The CV supplies three pipeline entries and five additional conference entries. Do not infer acceptance, reject a work, or silently move an in-press book chapter to published. Conference totals include upcoming contributions, with an explicit count. Four CANVAS 2026 records dated November 2026 are upcoming as of the initial snapshot; update after their dates using confirmed event records.
+- Verified DOI links are stored explicitly. `codeUrl`, `dataUrl`, `preprintUrl`, `openAccess` are optional and appear only with evidence. PLOS Water's Data Availability statement links to `https://osf.io/v52gm/overview`. No article-specific GitHub code was verified in the initial pass. Do not link unrelated GitHub repositories or generic journal taxonomies as paper code.
+- Impact factors must have `value`, metric `year`, and official publisher `url`. Initial official sources report Environmental Monitoring and Assessment 3.6 (2025), Remote Sensing Letters 1.5 (2025), PFG 3.1 (2025), and International Journal of Plant Production 2.6 (2025). Other journals' factors are omitted because current year-labelled primary-source metrics were not verified. Never substitute CiteScore, SJR or article citations for Journal Impact Factor. Pipeline venues are target outlets and do not receive impact badges.
+- Publisher record for the corn-yield paper gives online publication on 2026-08-13; Scholar lists September 2026. The online publisher date takes precedence. The European Geosciences Union abstract has a March deposit date but its meeting dates are May 3–8, 2026.
+
+## Monthly refresh
+
+A Codex monthly heartbeat named **Refresh portfolio publications** is scheduled for the first day of each month. It checks Scholar and publisher records, updates this dataset, regenerates the static HTML, pushes publication-only changes, and verifies GitHub Pages. Preserve the last good snapshot if a source is blocked. Do not create a second competing scheduler.
+
+## Validation
+
+Run the generator and `node --check js/publications.js`, then `git diff --check`. In the browser verify total counts, highlighted names, no zero-citation badges, no unavailable-resource placeholders, both sort modes, search, and a narrow-screen layout. Do not publish the uploaded CV, contact details or referees as part of this refresh.
