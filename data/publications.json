@@ -292,7 +292,12 @@
       "url": "https://journals.plos.org/water/article?id=10.1371/journal.pwat.0000394",
       "doi": "10.1371/journal.pwat.0000394",
       "source": "Google Scholar",
-      "impact": null,
+      "impact": {
+        "value": 2.8,
+        "checked": "2026-10-19",
+        "url": "https://research.com/journal/plos-water",
+        "source": "Research.com; secondary source, cross-checked against indexed JCR list"
+      },
       "dataUrl": "https://osf.io/v52gm/overview",
       "preprintUrl": "https://arxiv.org/abs/2412.12113",
       "openAccess": true
