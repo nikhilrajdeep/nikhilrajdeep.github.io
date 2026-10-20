@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.css">
 <!-- @end -->
 <!-- @build:site-css -->
-<link rel="stylesheet" href="css/style.css?v=20261019e">
+<link rel="stylesheet" href="css/style.css?v=20261019-about">
 <!-- @end -->
 </head>
 <body>
@@ -99,42 +99,62 @@
 </section>
 
 <!-- ═════════ ABOUT ═════════ -->
-<section class="section" id="about">
+<section class="section about-section" id="about">
   <div class="wrap">
     <div class="kicker">01 · About</div>
-    <h2>Soil water, seen from above.</h2>
-    <div class="about">
-      <div>
-        <div class="portrait" id="portrait">
-          <svg viewBox="0 0 200 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <g fill="none" stroke="currentColor" stroke-opacity=".18" style="color:var(--teal)">
-              <circle cx="100" cy="125" r="46"/><circle cx="100" cy="125" r="78"/><circle cx="100" cy="125" r="112"/>
-              <path d="M0 125h200M100 0v250M30 40l140 170M170 40L30 210"/>
-            </g>
-          </svg>
-          <span>NRD</span>
-          <img id="portraitImg" src="assets/photo.jpg" alt="Portrait of Nikhil Raj Deep" hidden>
+    <div class="about-heading"><h2>From field measurements<br>to a view from space.</h2><p>Soil. Water. Signals.<br>Connected through science.</p></div>
+    <div class="about-layout">
+      <aside class="profile-card" aria-label="Profile and social networks">
+        <div class="profile-photo"><img id="portraitImg" src="assets/photo.jpg" alt="Nikhil Raj Deep" width="864" height="1032"></div>
+        <div class="profile-details"><h3>Nikhil Raj Deep</h3><p>Applied scientist &amp;<br>remote sensing practitioner</p><div class="profile-place"><span aria-hidden="true">⌖</span> Gainesville, Florida</div>
+          <nav class="social-grid" aria-label="Social profiles">
+            <a href="https://scholar.google.com/citations?user=Tq4KyvUAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer"><img src="assets/google-scholar.svg" alt="" width="20" height="20">Scholar</a>
+            <a href="https://www.researchgate.net/profile/Nikhil-Raj-Deep" target="_blank" rel="noopener noreferrer"><img src="assets/researchgate.svg" alt="" width="20" height="20">ResearchGate</a>
+            <a href="https://github.com/nikhilrajdeep" target="_blank" rel="noopener noreferrer"><img src="assets/github.svg" alt="" width="20" height="20">GitHub</a>
+            <a href="https://x.com/Nikhilrajdeep" target="_blank" rel="noopener noreferrer"><img src="assets/x-twitter.svg" alt="" width="20" height="20">Twitter / X</a>
+            <a href="https://www.instagram.com/nikhilrajdeep/" target="_blank" rel="noopener noreferrer"><img src="assets/instagram.svg" alt="" width="20" height="20">Instagram</a>
+            <a href="https://www.linkedin.com/in/nikhilrajdeep/" target="_blank" rel="noopener noreferrer"><img src="assets/linkedin-in.svg" alt="" width="20" height="20">LinkedIn</a>
+          </nav>
         </div>
-        <dl class="facts">
-          <div><dt>Now</dt><dd>PhD candidate, Soil, Water &amp; Ecosystem Sciences, University of Florida</dd></div>
-          <div><dt>Also</dt><dd>Research Scientist, NRSC · ISRO (India)</dd></div>
-          <div><dt>Based</dt><dd>Gainesville, Florida, USA</dd></div>
-          <div><dt>Tools</dt><dd>R · Python · Google Earth Engine</dd></div>
-        </dl>
-      </div>
-      <div>
-        <p class="lead">I am an applied scientist, developer and remote sensing practitioner with more than five years of experience turning satellite, airborne and field observations into soil and crop information people can act on.</p>
-        <p>My PhD at the University of Florida focuses on <strong>field-scale root-zone soil moisture (RZSM)</strong> — estimated from L-band passive microwave radiometry, the τ–ω radiative-transfer model and physics-constrained machine learning — and on forecasting <strong>plant-available water</strong> across Florida's sandy soils and cropping systems.</p>
-        <p>Before Florida I worked as a Research Scientist at the National Remote Sensing Centre (NRSC), ISRO, where I led national-scale land-use / land-cover mapping from AWiFS and LISS-III, and built crop-mapping tools on Sentinel-1/2 and Google Earth Engine. I also worked with imaging spectroscopy (PRISMA, AVIRIS-NG) for soil organic carbon, and with hyperspectral data for mangrove chlorophyll.</p>
-        <h3 style="font-size:1.1rem;margin:1.6rem 0 .7rem">Interests</h3>
-        <ul class="chips">
-          <li>Passive &amp; active microwave</li><li>L-band radiometry</li><li>Root-zone soil moisture</li><li>Soil hydraulic properties</li>
-          <li>Pedotransfer functions</li><li>Imaging spectroscopy</li><li>Land cover mapping</li><li>Crop mapping</li><li>Physics-informed ML</li><li>UAV remote sensing</li>
-        </ul>
-        <h3 style="font-size:1.1rem;margin:1.6rem 0 .7rem">Beyond the lab</h3>
-        <p>Vice President of the SWES graduate student association; research coordinator in the Data Science Institute group at UF. Member of ASPRS, SSSA and AI² (AI Square) Center club, among others — and currently working with my advisor, <strong>Dr. Ebrahim Babaeian</strong>, to start a Remote Sensing &amp; AI student club in SWES.</p>
+      </aside>
+      <div class="about-story">
+        <div class="about-label">The person behind the pixels</div>
+        <p class="about-intro">I’m Nikhil, an applied scientist and developer connecting <strong>what we measure on the ground</strong> with <strong>what we observe from space.</strong></p>
+        <p>I am a PhD candidate in Soil, Water, and Ecosystem Sciences at the University of Florida, working with <strong>Dr. Ebrahim Babaeian</strong>. My research brings together field observations, microwave remote sensing, soil physics and machine learning to understand water in the root zone—and the water available to crops.</p>
+        <p>Previously, as a Research Scientist at the <strong>National Remote Sensing Centre, ISRO</strong>, I led national-scale land-use and land-cover mapping with AWiFS and LISS-III and developed crop-mapping tools using Sentinel-1/2 and Google Earth Engine. My work also spans imaging spectroscopy for soil organic carbon and hyperspectral observations of mangrove chlorophyll.</p>
+        <div class="research-focus">
+          <div class="about-label">The questions that guide my work</div><h3>What is my research about?</h3>
+          <ol class="research-questions">
+            <li><span>01</span><div><h4>How much water lies beneath the surface?</h4><p>Retrieving field-scale root-zone soil moisture from satellite and UAV L-band radiometry, linked to field measurements and radiative-transfer physics.</p></div></li>
+            <li><span>02</span><div><h4>Can AI learn the physics of soil water?</h4><p>Building physics-guided models of soil-water retention and hydraulic conductivity, with uncertainty that makes predictions easier to interpret.</p></div></li>
+            <li><span>03</span><div><h4>How can observations support crop-water decisions?</h4><p>Connecting soil moisture, soil properties and crop conditions to forecast plant-available water in Florida’s sandy soils.</p></div></li>
+          </ol>
+        </div>
       </div>
     </div>
+    <div class="about-interests">
+      <div><div class="about-label">My research vocabulary</div><h3>Ideas that connect<br>my work.</h3><p>Across scales, sensors<br>and soil processes.</p></div>
+      <div class="word-cloud" aria-label="Research interests">
+        <span class="word-sm">UAV remote sensing</span><span class="word-md">L-band radiometry</span><span class="word-sm">Soil hydraulic properties</span>
+        <span class="word-xl">Root-zone soil moisture</span><span class="word-sm">Imaging spectroscopy</span><span class="word-lg">Physics-guided AI</span>
+        <span class="word-md">Earth observation</span><span class="word-sm">Pedotransfer functions</span><span class="word-md">Plant-available water</span>
+        <span class="word-sm">Land-cover mapping</span><span class="word-sm">Crop mapping</span><span class="word-md">Field measurements</span>
+      </div>
+    </div>
+    <div class="about-subheading"><div class="about-label">Academic foundations</div><h3>Education</h3></div>
+    <ol class="education-list">
+      <li><a class="education-logo" href="https://www.ufl.edu/" target="_blank" rel="noopener noreferrer" aria-label="University of Florida"><img src="assets/university-florida.png" alt="University of Florida logo" loading="lazy"></a><div><span class="education-degree">Doctor of Philosophy <span class="education-status">In progress</span></span><h4>University of Florida</h4><p>Soil, Water, and Ecosystem Sciences</p><span class="education-note">Root-zone soil moisture · Microwave remote sensing · Physics-guided learning</span></div><span class="education-location">Gainesville, USA</span></li>
+      <li><a class="education-logo" href="https://bitmesra.ac.in/" target="_blank" rel="noopener noreferrer" aria-label="Birla Institute of Technology, Mesra"><img src="assets/bit-mesra.png" alt="Birla Institute of Technology, Mesra emblem" loading="lazy"></a><div><span class="education-degree">Master of Technology</span><h4>Birla Institute of Technology, Mesra</h4><p>Remote Sensing</p><span class="education-note">Graduated with distinction</span></div><span class="education-location">Mesra, India</span></li>
+      <li><a class="education-logo" href="https://bitmesra.ac.in/" target="_blank" rel="noopener noreferrer" aria-label="Birla Institute of Technology, Mesra"><img src="assets/bit-mesra.png" alt="Birla Institute of Technology, Mesra emblem" loading="lazy"></a><div><span class="education-degree">Bachelor of Technology</span><h4>Birla Institute of Technology, Mesra</h4><p>Civil Engineering</p><span class="education-note">Engineering foundations for environmental observation</span></div><span class="education-location">Mesra, India</span></li>
+    </ol>
+    <div class="about-subheading"><div class="about-label">Tools &amp; technologies</div><h3>From observations to working systems.</h3><p>The languages, platforms and methods I use in my research.</p></div>
+    <div class="toolkit-grid">
+      <article><span class="toolkit-symbol" aria-hidden="true">{ }</span><h4>Programming &amp; development</h4><ul><li>Python</li><li>R</li><li>Google Earth Engine JavaScript</li><li>R package development</li></ul></article>
+      <article><span class="toolkit-symbol" aria-hidden="true">◎</span><h4>Geospatial &amp; Earth observation</h4><ul><li>Google Earth Engine</li><li>Sentinel-1 &amp; Sentinel-2</li><li>AWiFS &amp; LISS-III</li><li>PRISMA &amp; AVIRIS-NG</li></ul></article>
+      <article><span class="toolkit-symbol" aria-hidden="true">∿</span><h4>Physics &amp; machine learning</h4><ul><li>τ–ω radiative transfer</li><li>Physics-informed learning</li><li>Neural pedotransfer functions</li><li>Uncertainty estimation</li></ul></article>
+      <article><span class="toolkit-symbol" aria-hidden="true">⌁</span><h4>Field &amp; airborne observations</h4><ul><li>UAV L-band radiometry</li><li>Soil-moisture measurements</li><li>Microwave validation</li><li>Imaging spectroscopy</li></ul></article>
+    </div>
+    <div class="beyond-lab"><div><div class="about-label">Science is a shared pursuit</div><h3>Beyond the lab</h3></div><div><p>I serve as Vice President of the SWES graduate student association and as a research coordinator in the Data Science Institute group at UF. I’m a member of ASPRS, SSSA and the AI² (AI Square) Center club.</p><p>I am also working with my advisor, <strong>Dr. Ebrahim Babaeian</strong>, to start a <strong>Remote Sensing &amp; AI student club</strong> in SWES—a space to connect people, exchange methods and learn together.</p></div></div>
   </div>
 </section>
 
