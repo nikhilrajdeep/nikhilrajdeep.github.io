@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.css">
 <!-- @end -->
 <!-- @build:site-css -->
-<link rel="stylesheet" href="css/style.css?v=20261019-sticky">
+<link rel="stylesheet" href="css/style.css?v=20261019-career">
 <!-- @end -->
 </head>
 <body>
@@ -166,45 +166,74 @@
 </section>
 
 <!-- ═════════ EXPERIENCE ═════════ -->
-<section class="section" id="experience">
+<section class="section experience-story" id="experience">
   <div class="wrap">
     <div class="kicker">02 · Experience</div>
-    <h2>Where I have worked</h2>
-    <ol class="timeline">
-      <li>
-        <div class="when"><span class="todo-badge">ADD DATES</span>Present</div>
-        <h3>PhD Candidate &amp; Graduate Researcher</h3>
-        <div class="org">University of Florida · Soil, Water, and Ecosystem Sciences</div>
-        <ul>
-          <li>Field-scale root-zone soil moisture from UAV and satellite L-band radiometry (τ–ω, effective emission depth, Tikhonov-regularised retrieval).</li>
-          <li>NISAR soil-moisture validation over Florida potato and sweet-corn fields.</li>
-          <li>Physics-informed neural pedotransfer functions for van Genuchten water-retention and hydraulic-conductivity curves.</li>
-          <li>Research coordinator, Data Science and Informatics club · Vice President, SWES graduate student association.</li>
-        </ul>
-      </li>
-      <li>
-        <div class="when"><span class="todo-badge">ADD DATES</span>India</div>
-        <h3>Research Scientist</h3>
-        <div class="org">National Remote Sensing Centre (NRSC), ISRO</div>
-        <ul>
-          <li>Led a team on national-scale land-use / land-cover mapping using AWiFS and LISS-III.</li>
-          <li>Developed <strong>cropMapper</strong>, an R package for seasonal crop-area mapping with Sentinel-1/2 on Google Earth Engine.</li>
-          <li>Predicted soil organic carbon from imaging spectroscopy (PRISMA, AVIRIS-NG).</li>
-        </ul>
-      </li>
-      <li>
-        <div class="when"><span class="todo-badge">ADD DATES</span>India</div>
-        <h3>Junior Research Fellow</h3>
-        <div class="org">IIT Kharagpur</div>
-        <ul><li>Hyperspectral analysis of mangroves and chlorophyll estimation.</li></ul>
-      </li>
-      <li>
-        <div class="when"><span class="todo-badge">ADD DATES</span>India</div>
-        <h3>Junior Research Fellow</h3>
-        <div class="org">DRDO · Defence Terrain Research Laboratory (DGRE)</div>
-        <ul><li>Soil spectral libraries and terrain characterisation.</li></ul>
-      </li>
-    </ol>
+    <div class="experience-heading"><h2>A career across landscapes.</h2><p>Scroll to explore the places, questions and projects<br>that have shaped my work.</p></div>
+    <div class="career-layout">
+      <aside class="career-map-panel" aria-label="Career location map">
+        <div class="career-map-stage"><div id="careerMap" aria-label="Map of job locations in India and the United States"></div><div class="career-map-caption"><span class="career-caption-dot"></span><span id="careerLocation">A world of experience</span></div><div class="career-remote" id="careerRemote" hidden><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="15" width="30" height="22" rx="2"/><path d="M3 41h42M18 30h12M16 10a12 12 0 0 1 16 0M20 6a7 7 0 0 1 8 0"/></svg><strong>Working remotely</strong><span>Projects across connected landscapes</span></div><div class="career-map-fallback" id="careerMapFallback" hidden>Explore each location and role in the story beside this map.</div></div>
+        <nav class="career-legend" aria-label="Explore career locations">
+          <a href="#career-ranchi" style="--place-color:#b07628"><i></i>Ranchi, Jharkhand, India</a>
+          <a href="#career-delhi" style="--place-color:#ab4e6f"><i></i>New Delhi, India</a>
+          <a href="#career-kharagpur" style="--place-color:#27856a"><i></i>Kharagpur, West Bengal, India</a>
+          <a href="#career-hyderabad" style="--place-color:#7757bd"><i></i>Hyderabad, Telangana, India</a>
+          <a href="#career-gainesville" style="--place-color:#2879b7"><i></i>Gainesville, Florida, United States</a>
+          <a href="#career-remote" style="--place-color:#537586"><span aria-hidden="true">⌁</span>Remote projects</a>
+        </nav>
+        <p class="career-map-note">Colored rings highlight each work location. Select a place or keep scrolling.</p>
+      </aside>
+      <div class="career-chapters">
+        <article class="career-step career-overview" id="career-overview" data-place="overview">
+          <div class="about-label">The journey at a glance</div><h3>From engineering sites<br>to observing the Earth.</h3><p>My work has taken me from surveying construction sites in Ranchi to studying soil, vegetation and water through field measurements and satellite observations.</p><p>Today, I work at the University of Florida. Scroll through the story to explore my current research and the roles that came before it.</p><div class="career-scroll-cue" aria-hidden="true">Follow the journey <span>↓</span></div>
+        </article>
+        <article class="career-step" id="career-gainesville" data-place="gainesville" style="--place-color:#2879b7">
+          <div class="career-date">January 2025 to present <span>Current</span></div><div class="career-place">Gainesville, Florida, United States</div><h3>Doctoral Student and Graduate Research Assistant</h3><p class="career-institution">University of Florida</p><p class="career-department">Department of Soil, Water, and Ecosystem Sciences</p><ul>
+            <li>Automated radiative transfer modelling to estimate soil moisture at different depths across Florida.</li>
+            <li>Developed a semi automated Google Earth Engine workflow for near real time soil moisture estimation.</li>
+            <li>Used portable L band microwave radiometers and other field sensors to develop an interactive application for brightness temperature simulation and soil moisture estimation in agricultural fields.</li>
+            <li>Created a phenology based algorithm to produce cloud free and gap filled imagery for Florida.</li>
+          </ul><p class="career-aside">Doctoral research with Dr. Ebrahim Babaeian on soil moisture, hydraulic soil properties and water fluxes at the field scale.</p>
+        </article>
+        <article class="career-step" id="career-hyderabad" data-place="hyderabad" style="--place-color:#7757bd">
+          <div class="career-date">September 2022 to November 2024</div><div class="career-place">Hyderabad, Telangana, India</div><h3>Research Scientist</h3><p class="career-institution">National Remote Sensing Centre</p><p class="career-department">Indian Space Research Organisation</p><ul>
+            <li>Mapped land use and land cover across India at a scale of 1 to 250,000 using Advanced Wide Field Sensor observations.</li>
+            <li>Developed semi automated land cover mapping workflows in R and Google Earth Engine.</li>
+            <li>Estimated soil organic carbon from PRISMA hyperspectral imagery using machine learning and deep learning.</li>
+            <li>Built a phenology based thresholding model in Python and Google Earth Engine to map shifting cultivation in eastern India.</li>
+            <li>Delivered a Google Earth Engine workshop on resource monitoring for 15 government officials.</li>
+          </ul>
+        </article>
+        <article class="career-step" id="career-remote" data-place="remote" style="--place-color:#537586">
+          <div class="career-date">March 2022 to October 2023</div><div class="career-place">Remote work · Multiple project regions</div><h3>Freelance Geospatial Research</h3><p class="career-institution">Independent projects</p><ul>
+            <li>Mapped mangrove extent in Cameroon for 2011 and 2021 using Google Earth Engine, with a methodology report and quantitative assessment of restoration areas.</li>
+            <li>Mapped coastal wetland forests in Florida and developed habitat suitability maps to identify restoration areas.</li>
+            <li>Identified vulnerable drainage channels along the main stream of the Ganga River in relation to natural and human influences.</li>
+          </ul><p class="career-aside">The remote symbol represents how this work was carried out. The project regions are not presented as office locations.</p>
+        </article>
+        <article class="career-step" id="career-kharagpur" data-place="kharagpur" style="--place-color:#27856a">
+          <div class="career-date">February 2021 to March 2022</div><div class="career-place">Kharagpur, West Bengal, India</div><h3>Research Fellow</h3><p class="career-institution">Indian Institute of Technology Kharagpur</p><p class="career-department">Centre for Oceans, Rivers, Atmosphere and Land Sciences</p><ul>
+            <li>Collected leaf area index, trunk diameter, canopy height and chlorophyll observations across 200 sample plots.</li>
+            <li>Built a mangrove field inventory for estimating total carbon stock and chlorophyll.</li>
+            <li>Developed research methods and machine learning models in R for mangrove species classification and chlorophyll estimation using imaging spectroscopy.</li>
+            <li>Designed and taught a forest remote sensing laboratory course for 18 students.</li>
+            <li>Supported the supervision of an undergraduate project mapping mangrove extent in Bhitarkanika, Odisha, India.</li>
+          </ul>
+        </article>
+        <article class="career-step" id="career-delhi" data-place="delhi" style="--place-color:#ab4e6f">
+          <div class="career-date">May 2018 to September 2020</div><div class="career-place">New Delhi, India</div><h3>Research Fellow</h3><p class="career-institution">Defence Terrain Research Laboratory</p><p class="career-department">Defence Research and Development Organisation</p><ul>
+            <li>Collected more than 5,000 spectral observations of vegetation, soil, rocks, wood, paints and other materials across India.</li>
+            <li>Created a spectral library for material classification and extraction of terrain properties from hyperspectral observations.</li>
+            <li>Conducted soil texture and spectral analysis experiments and developed a nonparametric model to estimate soil texture from spectra.</li>
+            <li>Monitored flood extent in northern Bihar using Google Earth Engine.</li>
+            <li>Trained six trainees in atmospheric correction of Hyperion imagery.</li>
+          </ul>
+        </article>
+        <article class="career-step" id="career-ranchi" data-place="ranchi" style="--place-color:#b07628">
+          <div class="career-date">June 2015 to November 2015</div><div class="career-place">Ranchi, Jharkhand, India</div><h3>Site Engineer</h3><p class="career-institution">Bharat Drilling and Foundation Treatment</p><ul><li>Surveyed construction land covering 80 acres.</li><li>Estimated completed construction work and supported engineering site assessment.</li></ul><p class="career-aside">An early foundation in measurement, terrain and the practical relationship between land and engineering.</p>
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -411,6 +440,7 @@
 <script src="js/config.js"></script>
 <script src="js/layers.js"></script>
 <script src="js/main.js?v=20261019-sticky"></script>
+<script src="js/experience.js?v=20261019-career"></script>
 <!-- @end -->
 </body>
 </html>
