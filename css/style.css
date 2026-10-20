@@ -400,7 +400,7 @@ input[type="range"] { width: 100%; accent-color: var(--hero-accent); height: 1.6
 .about-intro strong { font-weight: 500; color: var(--teal); }
 .about-story > p:not(.about-intro) { font-size: .96rem; line-height: 1.85; color: var(--muted); }
 .about-story strong { color: var(--fg); font-weight: 600; }
-.about-story > .academic-lead { font: 400 clamp(1.25rem, 2vw, 1.55rem)/1.55 var(--serif); color: var(--fg); margin-bottom: 1.15rem; }
+.about-story > p.academic-lead { font: 400 clamp(1.25rem, 2vw, 1.55rem)/1.55 var(--serif); color: var(--fg); margin-bottom: 1.15rem; }
 .research-focus { margin-top: 2rem; padding-top: 1.6rem; border-top: 1px solid var(--line); }
 .research-focus h3 { font-size: 1.65rem; margin-bottom: 1.2rem; }
 .research-questions { list-style: none; padding: 0; margin: 0; display: grid; gap: 1.1rem; }
