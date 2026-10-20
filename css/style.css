@@ -497,6 +497,67 @@ input[type="range"] { width: 100%; accent-color: var(--hero-accent); height: 1.6
 .toolkit-grid--expanded .toolkit-field { grid-column: 1 / -1; }
 .toolkit-grid--expanded .toolkit-field ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem 2rem; }
 .toolkit-grid--expanded h4 { min-height: 0; }
+/* A persistent profile accompanies six independently readable chapters. */
+.about-scroll-layout { display: grid; grid-template-columns: 16rem minmax(0, 1fr); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+.about-rail { position: sticky; top: calc(var(--nav-h) + 1.25rem); }
+.about-rail-heading .kicker { margin-bottom: .5rem; }
+.about-rail-heading h2 { font-size: 2.5rem; font-weight: 500; letter-spacing: -.04em; margin: 0 0 1rem; }
+.about-rail .profile-card { background: transparent; border: 0; border-radius: 0; }
+.about-rail .profile-photo { height: clamp(9rem, 31svh, 18rem); aspect-ratio: auto; border-radius: .4rem; }
+.about-rail .profile-details { padding: .85rem 0 0; }
+.about-rail .profile-details h3 { font-size: 1.15rem; }
+.about-rail .profile-details > p { font-size: .75rem; margin-bottom: .5rem; }
+.about-rail .profile-details > p br { display: none; }
+.about-rail .profile-place { padding-top: .45rem; font-size: .65rem; }
+.about-rail .social-grid { margin-top: .6rem; gap: .3rem; }
+.about-rail .social-grid a { padding: .5rem .35rem; font-size: .65rem; }
+.about-chapter-nav { display: flex; gap: .4rem; margin-top: 1rem; }
+.about-chapter-nav a { display: flex; align-items: center; width: 2rem; height: 1.4rem; }
+.about-chapter-nav span { width: 100%; height: 2px; background: var(--line); transition: background .2s; }
+.about-chapter-nav a[aria-current] span { background: var(--teal); height: 3px; }
+.about-chapter-nav a:hover span { background: var(--teal); }
+.about-current { font: 400 .63rem/1.5 var(--mono); color: var(--muted); margin: 0; min-height: 2rem; }
+.about-chapter { min-height: calc(100svh - var(--nav-h) - 3rem); padding: .25rem 0 3rem; scroll-margin-top: calc(var(--nav-h) + 1.5rem); }
+.about-chapter + .about-chapter { border-top: 1px solid var(--line); padding-top: 2.25rem; }
+.about-chapter > p { font-size: 1.065rem; line-height: 1.85; color: var(--muted); }
+.about-chapter > p.academic-lead { font: 400 clamp(1.25rem, 2vw, 1.55rem)/1.55 var(--serif); color: var(--fg); }
+.about-chapter .research-focus, .about-chapter .about-subheading, .about-chapter .about-interests, .about-chapter .beyond-lab { margin-top: 0; padding-top: 0; border: 0; }
+.about-chapter .about-interests { grid-template-columns: 1fr; gap: 2rem; padding-bottom: 0; }
+.about-chapter .about-interests h3 br, .about-chapter .about-interests p br { display: none; }
+.about-chapter .word-cloud { min-height: 17rem; align-content: center; gap: .6rem 1.2rem; }
+.about-chapter .education-list > li { grid-template-columns: 3.8rem minmax(0, 1fr); gap: .8rem 1.2rem; }
+.about-chapter .education-logo { width: 3.8rem; height: 3.8rem; grid-row: span 2; align-self: start; }
+.about-chapter .education-date { grid-column: 2; display: flex; gap: 1rem; text-align: left; padding: 0; }
+.about-chapter .toolkit-grid { display: block; }
+.about-chapter .toolkit-grid article { padding: 1rem 0; border: 0; border-bottom: 1px solid var(--line); background: transparent; border-radius: 0; }
+.about-chapter .toolkit-grid h4 { font-size: .92rem; margin: 0 0 .7rem; }
+.about-chapter .toolkit-grid ul, .about-chapter .toolkit-field ul { display: flex; flex-wrap: wrap; gap: .4rem; }
+.about-chapter .toolkit-grid li { padding: .28rem .6rem; border: 1px solid var(--line); border-radius: .3rem; font-size: .75rem; line-height: 1.5; background: var(--bg); }
+.about-chapter .beyond-lab { display: block; }
+.about-chapter .beyond-lab > div:first-child { margin-bottom: 1.8rem; }
+@media (min-width: 850px) and (max-height: 720px) {
+  .about-rail-heading h2 { font-size: 2rem; margin-bottom: .7rem; }
+  .about-rail .profile-photo { height: 25svh; }
+  .about-rail .profile-place { display: none; }
+  .about-rail .profile-details > p { display: none; }
+}
+@media (max-width: 849px) {
+  .about-scroll-layout { display: block; }
+  .about-rail { top: var(--nav-h); z-index: 12; padding: .8rem 0 .5rem; background: var(--surface); border-bottom: 1px solid var(--line); }
+  .about-rail-heading .kicker, .about-rail .profile-details > p, .about-rail .profile-place, .about-current { display: none; }
+  .about-rail-heading h2 { font-size: 1.6rem; margin: 0 0 .6rem; }
+  .about-rail .profile-card { display: flex; align-items: center; gap: .85rem; max-width: none; margin: 0; }
+  .about-rail .profile-photo { width: 3.6rem; height: 4rem; flex: 0 0 auto; }
+  .about-rail .profile-details { padding: 0; min-width: 0; }
+  .about-rail .profile-details h3 { font-size: 1rem; margin-bottom: .25rem; }
+  .about-rail .social-grid { display: flex; flex-wrap: wrap; margin: 0; gap: .25rem; }
+  .about-rail .social-grid a { font-size: 0; padding: .4rem; }
+  .about-rail .social-grid img { width: .9rem; height: .9rem; }
+  .about-chapter-nav { margin-top: .45rem; }
+  .about-chapter { min-height: calc(100svh - 14rem); padding-top: 1.5rem; scroll-margin-top: calc(var(--nav-h) + 11rem); }
+  .about-chapter + .about-chapter { padding-top: 1.5rem; }
+  .about-chapter .word-cloud { min-height: 15rem; }
+}
 @media (max-width: 699px) {
   .about-section .toolkit-grid--expanded { grid-template-columns: 1fr; }
   .toolkit-grid--expanded .toolkit-field ul { grid-template-columns: 1fr; }

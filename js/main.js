@@ -65,6 +65,24 @@
     }, { threshold: 0.5 }).observe(hero);
   }
 
+  // Keep the profile rail's chapter indicator in step with ordinary page scrolling.
+  const aboutChapters = Array.from(document.querySelectorAll('.about-chapter'));
+  const chapterLinks = Array.from(document.querySelectorAll('.about-chapter-nav a'));
+  const currentChapter = document.querySelector('.about-current');
+  if ('IntersectionObserver' in window && aboutChapters.length) {
+    const chapterObserver = new IntersectionObserver((entries) => {
+      const visible = entries.filter(e => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (!visible.length) return;
+      const chapter = visible[0].target;
+      chapterLinks.forEach(link => {
+        if (link.hash === '#' + chapter.id) link.setAttribute('aria-current', 'step');
+        else link.removeAttribute('aria-current');
+      });
+      currentChapter.textContent = chapter.getAttribute('aria-label');
+    }, { rootMargin: '-28% 0px -45% 0px', threshold: 0 });
+    aboutChapters.forEach(chapter => chapterObserver.observe(chapter));
+  }
+
   // Optional portrait: shown only if assets/photo.jpg exists.
   const img = $('portraitImg');
   if (img) {

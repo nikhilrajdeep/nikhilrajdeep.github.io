@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.css">
 <!-- @end -->
 <!-- @build:site-css -->
-<link rel="stylesheet" href="css/style.css?v=20261019-toolkit">
+<link rel="stylesheet" href="css/style.css?v=20261019-sticky">
 <!-- @end -->
 </head>
 <body>
@@ -99,12 +99,11 @@
 </section>
 
 <!-- ═════════ ABOUT ═════════ -->
-<section class="section about-section" id="about">
-  <div class="wrap">
-    <div class="kicker">01 · About</div>
-    <div class="about-heading"><div><div class="observatory-line" aria-hidden="true"><span></span></div><h2>About me</h2></div><p>Soil. Water. Vegetation. Greenhouse gases.<br>Observations across connected landscapes.</p></div>
-    <div class="about-layout">
-      <aside class="profile-card" aria-label="Profile and social networks">
+<section class="section about-section about-sequence" id="about">
+  <div class="wrap about-scroll-layout">
+    <div class="about-rail">
+      <div class="about-rail-heading"><div class="kicker">01 · About</div><h2>About me</h2></div>
+            <aside class="profile-card" aria-label="Profile and social networks">
         <div class="profile-photo"><img id="portraitImg" src="assets/photo.jpg" alt="Nikhil Raj Deep" width="864" height="1032"></div>
         <div class="profile-details"><h3>Nikhil Raj Deep</h3><p>Applied scientist &amp;<br>remote sensing practitioner</p><div class="profile-place"><span aria-hidden="true">⌖</span> Gainesville, Florida</div>
           <nav class="social-grid" aria-label="Social profiles">
@@ -117,23 +116,24 @@
           </nav>
         </div>
       </aside>
-      <div class="about-story">
-        <div class="about-label">Research &amp; background</div>
+      <nav class="about-chapter-nav" aria-label="About sections"><a href="#about-background" aria-label="Research &amp; background" title="Research &amp; background" aria-current="step"><span></span></a><a href="#about-questions" aria-label="The questions that guide my work" title="The questions that guide my work"><span></span></a><a href="#about-interests" aria-label="Research interests" title="Research interests"><span></span></a><a href="#about-education" aria-label="Academic foundations" title="Academic foundations"><span></span></a><a href="#about-tools" aria-label="Tools &amp; technologies" title="Tools &amp; technologies"><span></span></a><a href="#about-community" aria-label="Beyond the lab" title="Beyond the lab"><span></span></a></nav>
+      <p class="about-current" aria-hidden="true">Research &amp; background</p>
+    </div>
+    <div class="about-chapters">
+      <section class="about-chapter" id="about-background" aria-label="Research &amp; background">        <div class="about-label">Research &amp; background</div>
         <p class="academic-lead">I am a PhD candidate in Soil, Water, and Ecosystem Sciences at the <strong>University of Florida</strong>, working with <strong>Dr. Ebrahim Babaeian</strong>.</p>
         <p>My doctoral research examines soil moisture, hydraulic soil properties and water fluxes at the field scale. I combine L band microwave radiometry, field measurements, radiative transfer modelling and machine learning to estimate moisture at different soil depths and understand how water moves through Florida’s sandy agricultural soils. I study the effective depth of microwave emission to improve estimates of moisture in the root zone. I also develop physics guided neural pedotransfer functions for soil water retention and hydraulic properties, alongside methods for downscaling and forecasting SMAP soil moisture.</p>
         <p>Before joining UF, I worked as a Research Scientist at the <strong>National Remote Sensing Centre, Indian Space Research Organisation (ISRO)</strong>. There, I worked on national land use and land cover mapping, automated mapping workflows, shifting cultivation and soil organic carbon estimation using PRISMA imaging spectroscopy. My earlier research at IIT Kharagpur explored mangrove species, leaf chlorophyll and carbon stocks using field inventories and AVIRIS NG imagery. At the Defence Terrain Research Laboratory, I developed spectral libraries and models of soil texture and worked on flood monitoring. These experiences continue to shape my interests in agriculture, vegetation dynamics, soil, water and environmental change.</p>
-        <div class="research-focus">
+</section>
+<section class="about-chapter" id="about-questions" aria-label="The questions that guide my work">        <div class="research-focus">
           <div class="about-label">The questions that guide my work</div><h3>What is my research about?</h3>
           <ol class="research-questions">
             <li><span>01</span><div><h4>Water in agricultural landscapes</h4><p>Estimating soil moisture and hydraulic properties, understanding water fluxes, and connecting microwave observations with agricultural water management.</p></div></li>
             <li><span>02</span><div><h4>Vegetation, mangroves and carbon</h4><p>Using imaging spectroscopy and field measurements to study species composition, leaf chlorophyll, leaf area index, vegetation condition and mangrove carbon stocks.</p></div></li>
             <li><span>03</span><div><h4>Land, soil and changing environments</h4><p>Mapping land cover and shifting cultivation, estimating soil organic carbon and soil texture, and examining floods, surface water and wetland restoration.</p></div></li>
             <li><span>04</span><div><h4>New questions in greenhouse gas emissions</h4><p>I am interested in extending my geospatial research to methane and other greenhouse gas emissions across agricultural and wetland landscapes.</p></div></li>
-          </ol>
-        </div>
-      </div>
-    </div>
-    <div class="about-interests">
+          </ol></div></section>
+<section class="about-chapter" id="about-interests" aria-label="Research interests">    <div class="about-interests">
       <div><div class="about-label">Research interests</div><h3>A connected<br>Earth system.</h3><p>Agriculture, vegetation, soil, water<br>and greenhouse gas emissions.</p></div>
       <div class="word-cloud" aria-label="Research interests">
         <span class="word-md word-topic--green">Agriculture</span><span class="word-sm word-topic--green">Vegetation dynamics</span><span class="word-lg word-topic--technique">Imaging spectroscopy</span><span class="word-sm word-topic--green">Mangrove ecosystems</span>
@@ -143,21 +143,25 @@
         <span class="word-md word-topic--soil">Root zone soil moisture</span><span class="word-sm word-topic--technique">Soil spectroscopy</span><span class="word-sm word-topic--technique">Land cover change</span><span class="word-sm word-topic--technique">UAV observations</span>
       </div>
     </div>
-    <div class="about-subheading"><div class="about-label">Academic foundations</div><h3>Education</h3></div>
+</section>
+<section class="about-chapter" id="about-education" aria-label="Academic foundations">    <div class="about-subheading"><div class="about-label">Academic foundations</div><h3>Education</h3></div>
     <ol class="education-list">
       <li><a class="education-logo" href="https://www.ufl.edu/" target="_blank" rel="noopener noreferrer" aria-label="University of Florida"><img src="assets/university-florida-mark.png" alt="University of Florida logo" loading="lazy"></a><div><span class="education-degree">Doctor of Philosophy <span class="education-status">In progress</span></span><h4>University of Florida</h4><p>Soil, Water, and Ecosystem Sciences</p><p class="education-thesis"><strong>Thesis</strong> Remote sensing of soil moisture, hydraulic soil properties and water fluxes at the field scale.</p><span class="education-note">Advisor · Dr. Ebrahim Babaeian</span></div><div class="education-date"><strong>Expected Dec 2029</strong><span>Gainesville, USA</span></div></li>
       <li><a class="education-logo" href="https://bitmesra.ac.in/" target="_blank" rel="noopener noreferrer" aria-label="Birla Institute of Technology, Mesra"><img src="assets/bit-mesra.png" alt="Birla Institute of Technology, Mesra emblem" loading="lazy"></a><div><span class="education-degree">Master of Technology</span><h4>Birla Institute of Technology, Mesra</h4><p>Remote Sensing</p><p class="education-thesis"><strong>Thesis</strong> Impact of climate change on surface water bodies of Ganga River basin using a remote sensing approach.</p><span class="education-note">Advisor · Dr. Virendra Singh Rathore</span></div><div class="education-date"><strong>June 2018</strong><span>Mesra, India</span></div></li>
       <li><a class="education-logo education-logo--wide" href="https://www.driems.ac.in/" target="_blank" rel="noopener noreferrer" aria-label="DRIEMS"><img src="assets/driems-emblem.png" alt="DRIEMS institution logo" loading="lazy"></a><div><span class="education-degree">Bachelor of Technology</span><h4>Dhaneswar Rath Institute of Engineering and Management Studies</h4><p>Civil Engineering</p><p class="education-thesis"><strong>Project</strong> Morphometric analysis of Subarnarekha River using remote sensing and GIS techniques.</p><span class="education-note">Advisor · Swapna Acharya</span></div><div class="education-date"><strong>August 2015</strong><span>Cuttack, India</span></div></li>
     </ol>
-    <div class="about-subheading"><div class="about-label">Tools &amp; technologies</div><h3>Tools &amp; technologies</h3><p>The software, methods and instruments I work with.</p></div>
+</section>
+<section class="about-chapter" id="about-tools" aria-label="Tools &amp; technologies">    <div class="about-subheading"><div class="about-label">Tools &amp; technologies</div><h3>Tools &amp; technologies</h3><p>The software, methods and instruments I work with.</p></div>
     <div class="toolkit-grid toolkit-grid--expanded">
-      <article><span class="toolkit-index">01</span><h4>Programming &amp; data science</h4><ul><li>R</li><li>Python</li><li>Google Earth Engine JavaScript</li><li>SQL</li><li>Excel</li><li>Machine learning</li><li>Deep learning</li><li>Physics guided learning</li><li>Cloud native geospatial workflows</li><li>Docker</li><li>Agentic coding</li><li>Vibe coding</li></ul></article>
-      <article><span class="toolkit-index">02</span><h4>GIS software &amp; packages</h4><ul><li>ArcGIS Desktop</li><li>ArcGIS Pro</li><li>QGIS</li><li>ENVI</li><li>ERDAS</li><li>SNAP</li><li>Global Mapper</li><li>Google Earth Pro</li><li>GeoLibre</li><li>Agisoft Metashape</li></ul></article>
-      <article><span class="toolkit-index">03</span><h4>Remote sensing technologies</h4><ul><li>Multispectral remote sensing</li><li>Hyperspectral remote sensing</li><li>Active microwave remote sensing</li><li>Passive microwave remote sensing</li></ul></article>
-      <article><span class="toolkit-index">04</span><h4>Physical models</h4><ul><li>HYDRUS</li><li>ARTMO</li><li>Radiative transfer modelling</li><li>Soil hydraulic pedotransfer functions</li></ul></article>
-      <article class="toolkit-field"><span class="toolkit-index">05</span><h4>Field instruments</h4><ul><li>LAI 2200C Plant Canopy Analyzer</li><li>Laser Range Finder</li><li>Spectroradiometer covering 350 to 2500 nm</li><li>Portable L band microwave radiometers</li><li>SPAD chlorophyll meter</li><li>PR2 soil moisture sensor</li><li>Acclima TDR</li><li>Apogee NDVI sensor</li><li>Apogee TIR sensor</li><li>Pika L Resonon Hyperspectral Camera</li></ul></article>
+      <article><h4>Programming &amp; data science</h4><ul><li>R</li><li>Python</li><li>Google Earth Engine JavaScript</li><li>SQL</li><li>Excel</li><li>Machine learning</li><li>Deep learning</li><li>Physics guided learning</li><li>Cloud native geospatial workflows</li><li>Docker</li><li>Agentic coding</li><li>Vibe coding</li></ul></article>
+      <article><h4>GIS software &amp; packages</h4><ul><li>ArcGIS Desktop</li><li>ArcGIS Pro</li><li>QGIS</li><li>ENVI</li><li>ERDAS</li><li>SNAP</li><li>Global Mapper</li><li>Google Earth Pro</li><li>GeoLibre</li><li>Agisoft Metashape</li></ul></article>
+      <article><h4>Remote sensing technologies</h4><ul><li>Multispectral remote sensing</li><li>Hyperspectral remote sensing</li><li>Active microwave remote sensing</li><li>Passive microwave remote sensing</li></ul></article>
+      <article><h4>Physical models</h4><ul><li>HYDRUS</li><li>ARTMO</li><li>Radiative transfer modelling</li><li>Soil hydraulic pedotransfer functions</li></ul></article>
+      <article class="toolkit-field"><h4>Field instruments</h4><ul><li>LAI 2200C Plant Canopy Analyzer</li><li>Laser Range Finder</li><li>Spectroradiometer covering 350 to 2500 nm</li><li>Portable L band microwave radiometers</li><li>SPAD chlorophyll meter</li><li>PR2 soil moisture sensor</li><li>Acclima TDR</li><li>Apogee NDVI sensor</li><li>Apogee TIR sensor</li><li>Pika L Resonon Hyperspectral Camera</li></ul></article>
     </div>
-    <div class="beyond-lab"><div><div class="about-label">Science is a shared pursuit</div><h3>Beyond the lab</h3></div><div><p>I serve as Vice President of the SWES graduate student association and as a research coordinator in the Data Science and Informatics club at UF. I’m a member of ASPRS, SSSA and the AI² (AI Square) Center club.</p><p>I am also working with my advisor, <strong>Dr. Ebrahim Babaeian</strong>, to start a <strong>Remote Sensing &amp; AI student club</strong> in SWES. The club will be a space to connect people, exchange methods and learn together.</p></div></div>
+</section>
+<section class="about-chapter" id="about-community" aria-label="Beyond the lab">    <div class="beyond-lab"><div><div class="about-label">Science is a shared pursuit</div><h3>Beyond the lab</h3></div><div><p>I serve as Vice President of the SWES graduate student association and as a research coordinator in the Data Science and Informatics club at UF. I’m a member of ASPRS, SSSA and the AI² (AI Square) Center club.</p><p>I am also working with my advisor, <strong>Dr. Ebrahim Babaeian</strong>, to start a <strong>Remote Sensing &amp; AI student club</strong> in SWES. The club will be a space to connect people, exchange methods and learn together.</p></div></div></section>
+    </div>
   </div>
 </section>
 
@@ -406,7 +410,7 @@
 <script src="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.js"></script>
 <script src="js/config.js"></script>
 <script src="js/layers.js"></script>
-<script src="js/main.js?v=20261019d"></script>
+<script src="js/main.js?v=20261019-sticky"></script>
 <!-- @end -->
 </body>
 </html>
